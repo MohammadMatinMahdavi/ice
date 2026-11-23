@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useMemo, useState, type FormEvent } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -37,7 +37,7 @@ function Hero(){
  const [prompt,setPrompt]=useState("");
  const [submitted,setSubmitted]=useState(false);
  const suggestions=["برای برندم هویت بصری می‌خوام","یک کمپین تبلیغاتی خلاق بسازیم","برای اینستاگرام محتوای AI می‌خوام"];
- const submit=(event:React.FormEvent<HTMLFormElement>)=>{event.preventDefault();if(prompt.trim())setSubmitted(true)};
+ const submit=(event:FormEvent<HTMLFormElement>)=>{event.preventDefault();if(prompt.trim())setSubmitted(true)};
  const emailHref=`mailto:hello@ice.studio?subject=${encodeURIComponent("شروع پروژه با ICE")}&body=${encodeURIComponent(prompt)}`;
  return <section className="hero" id="home">
   <div className="hero-bg"/><div className="hero-orb"/><div className="hero-aura hero-aura-one"/><div className="hero-aura hero-aura-two"/>
