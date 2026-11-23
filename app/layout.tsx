@@ -1,4 +1,4 @@
 import type { Metadata } from "next";
 import "./globals.css";
 export const metadata: Metadata = { title: "ICE — Creative Intelligence Studio", description: "تولید محتوای خلاقانه با هوش مصنوعی؛ استراتژی، ویدیو و کمپین‌هایی که دیده می‌شوند.", openGraph: { title: "ICE — Creative Intelligence Studio", description: "خلاقیت، با قدرت هوش مصنوعی." } };
-export default function RootLayout({children}:{children:React.ReactNode}) { return <html lang="fa" dir="rtl"><body>{children}</body></html>; }
+export default function RootLayout({children}:{children:React.ReactNode}) { return <html lang="fa" dir="rtl"><head><link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous"/><link rel="preload" as="image" href="https://images.unsplash.com/photo-1517299321609-52687d1bc55a?auto=format&fit=crop&w=1920&q=78" fetchPriority="high"/></head><body>{children}</body></html>; }
