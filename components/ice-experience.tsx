@@ -12,7 +12,16 @@ import { Portfolio, AIServiceCards, CreativeServices, Process, FAQ, ProductPromo
 export default function IceExperience() {
   const [showMore, setShowMore] = useState(false);
   const revealMore = () => setShowMore(true);
-  const toggleMore = () => setShowMore(value => !value);
+  const toggleMore = () => {
+    if (!showMore) {
+      setShowMore(true);
+      window.setTimeout(() => {
+        document.querySelector("#portfolio")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 220);
+    } else {
+      setShowMore(false);
+    }
+  };
 
   return (
     <>
@@ -36,10 +45,10 @@ export default function IceExperience() {
               <CreativeServices />
               <Process />
               <FAQ />
-              <ProductPromo />
             </motion.div>
           )}
         </AnimatePresence>
+        <ProductPromo />
         <Contact />
       </main>
       <Footer />
