@@ -34,9 +34,9 @@ const categories = [
   { icon: ShoppingBag, title: "وب و تجارت الکترونیک", items: ["طراحی وب‌سایت و لندینگ‌پیج", "راه‌اندازی فروشگاه آنلاین", "طراحی UI/UX", "بهینه‌سازی تجربه خرید"] },
 ];
 const steps = [
-  ["01", "نیازت را بگو", "یک پیام یا brief کوتاه کافی است تا بدانیم چه چیزی لازم داری."],
-  ["02", "با AI و تخصص انسانی می‌سازیم", "درباره محدوده، هزینه و زمان توافق می‌کنیم؛ سپس اجرا را شروع می‌کنیم."],
-  ["03", "راه‌اندازی و تحویل", "فایل نهایی یا راهکار آماده‌ی استفاده را تحویل می‌گیری."],
+  ["01", "نیازت را بگو", "یک پیام یا brief کوتاه کافی است تا بدانیم چه چیزی لازم داری.", "/images/process/01-brief.jpg"],
+  ["02", "با AI و تخصص انسانی می‌سازیم", "درباره محدوده، هزینه و زمان توافق می‌کنیم؛ سپس اجرا را شروع می‌کنیم.", "/images/process/02-creation.jpg"],
+  ["03", "راه‌اندازی و تحویل", "فایل نهایی یا راهکار آماده‌ی استفاده را تحویل می‌گیری.", "/images/process/03-delivery.jpg"],
 ];
 const faqs = [
   ["می‌توانید اپلیکیشن یا چت‌بات اختصاصی بسازید؟", "بله. مسئله‌ی کسب‌وکارت را توضیح بده تا راهکار، زمان‌بندی و برآورد هزینه را پیشنهاد کنیم."],
@@ -63,7 +63,7 @@ export function CreativeServices() {
 }
 
 export function Process() {
-  return <section className="hm-section hm-process" id="process"><div className="container"><div className="hm-section-heading"><div><span className="eyebrow"><span className="eyebrow-mark" /> HOW IT WORKS</span><h2>سه قدم <span className="gradient-type">ساده.</span></h2></div></div><div className="hm-steps">{steps.map(([number, title, desc]) => <motion.article className="hm-step" key={number} {...fade}><span>{number}</span><div><h3>{title}</h3><p>{desc}</p></div><i><Check size={16} /></i></motion.article>)}</div></div></section>;
+  return <section className="hm-section hm-process" id="process"><div className="container"><div className="hm-section-heading"><div><span className="eyebrow"><span className="eyebrow-mark" /> HOW IT WORKS</span><h2>سه قدم <span className="gradient-type">ساده.</span></h2></div></div><div className="hm-steps">{steps.map(([number, title, desc, image]) => <motion.article className="hm-step hm-step-image" key={number} {...fade}><img className="hm-step-image-bg" src={image} alt="" loading="lazy" /><span className="hm-step-number">{number}</span><div className="hm-step-copy"><h3>{title}</h3><p>{desc}</p></div><i><Check size={16} /></i></motion.article>)}</div></div></section>;
 }
 
 export function FAQ() {
