@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDownLeft, ArrowUpLeft, MoveUpRight, Send, Sparkles, Menu, X, Check, WandSparkles, Clapperboard, Aperture, Workflow, Boxes, Layers3, Bot, Video, Palette, Globe, Instagram, Package, Megaphone } from "lucide-react";
+import { ArrowDownLeft, ArrowUpLeft, MoveUpRight, Send, Sparkles, Menu, X, Check, Clapperboard, Aperture, Workflow, Bot, Video, Palette, Globe, Instagram, Package, Megaphone } from "lucide-react";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
