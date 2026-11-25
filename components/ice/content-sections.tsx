@@ -6,18 +6,18 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const request = (service: string) => "mailto:hello@ice.studio?subject=" + encodeURIComponent("درخواست خدمات ICE: " + service) + "&body=" + encodeURIComponent("سلام، برای " + service + " مشاوره و برآورد قیمت می‌خواهم.");
 const portfolio = [
-  { image: "/images/portfolio/01-product-visuals.jpg", title: "تصویرسازی محصول", type: "AI PRODUCT VISUALS" },
-  { image: "/images/portfolio/02-campaign-video.jpg", title: "کمپین و تبلیغات", type: "CAMPAIGN / VIDEO" },
-  { image: "/images/portfolio/03-brand-style.jpg", title: "هویت و استایل برند", type: "BRAND IDENTITY" },
-  { image: "/images/portfolio/04-creative-details.jpg", title: "خلاقیت در جزئیات", type: "CREATIVE DIRECTION" },
-  { image: "/images/portfolio/05-digital-experience.jpg", title: "تجربه دیجیتال", type: "DIGITAL EXPERIENCE" },
-  { image: "/images/portfolio/06-visual-design.jpg", title: "طراحی بصری", type: "VISUAL DESIGN" },
-  { image: "/images/portfolio/07-product-campaign.jpg", title: "تبلیغات محصول", type: "PRODUCT CAMPAIGN" },
-  { image: "/images/portfolio/08-packaging.jpg", title: "طراحی و بسته‌بندی", type: "PACKAGING" },
-  { image: "/images/portfolio/09-ui-experience.jpg", title: "طراحی تجربه", type: "DIGITAL / UI" },
-  { image: "/images/portfolio/10-creative-content.jpg", title: "محتوای خلاق", type: "CONTENT" },
-  { image: "/images/portfolio/11-photo-production.jpg", title: "تولید محتوای تصویری", type: "PRODUCTION" },
-  { image: "/images/portfolio/12-brand-space.jpg", title: "فضای برند", type: "ART DIRECTION" },
+  { image: "/images/portfolio/01-product-visuals.jpg", title: "تصویرسازی محصول با هوش مصنوعی", type: "AI PRODUCT VISUALS" },
+  { image: "/images/portfolio/02-campaign-video.jpg", title: "ویدیو و کمپین تبلیغاتی", type: "CAMPAIGN / VIDEO" },
+  { image: "/images/portfolio/03-brand-style.jpg", title: "طراحی هویت بصری برند", type: "BRAND IDENTITY" },
+  { image: "/images/portfolio/04-creative-details.jpg", title: "طراحی خلاقانه و آرت‌دایرکشن", type: "CREATIVE DIRECTION" },
+  { image: "/images/portfolio/05-digital-experience.jpg", title: "طراحی تجربه دیجیتال و UI/UX", type: "DIGITAL EXPERIENCE" },
+  { image: "/images/portfolio/06-visual-design.jpg", title: "طراحی گرافیک و محتوای بصری", type: "VISUAL DESIGN" },
+  { image: "/images/portfolio/07-product-campaign.jpg", title: "کمپین تبلیغاتی محصول", type: "PRODUCT CAMPAIGN" },
+  { image: "/images/portfolio/08-packaging.jpg", title: "طراحی بسته‌بندی محصول", type: "PACKAGING" },
+  { image: "/images/portfolio/09-ui-experience.jpg", title: "طراحی رابط و تجربه کاربری", type: "DIGITAL / UI" },
+  { image: "/images/portfolio/10-creative-content.jpg", title: "تولید محتوا و کپی‌رایتینگ", type: "CONTENT" },
+  { image: "/images/portfolio/11-photo-production.jpg", title: "عکاسی و تولید محتوای تصویری", type: "PRODUCTION" },
+  { image: "/images/portfolio/12-brand-space.jpg", title: "طراحی فضای برند و غرفه", type: "ART DIRECTION" },
 ];
 const aiServices = [
   { icon: Package, title: "تصاویر محصول با هوش مصنوعی", desc: "تصاویر حرفه‌ای محصول با کیفیت استودیویی، بدون نیاز به عکاسی سنتی.", price: "استعلام قیمت", tag: "AI VISUALS", tone: "violet" },

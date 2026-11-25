@@ -390,3 +390,26 @@ body{background:#050507!important}
 @media(min-width:681px){.hm-step-image{min-height:310px!important;padding:26px!important}}
 @media(max-width:680px){.hm-service-strip-premium .hm-service-group{gap:23px!important;padding-inline-end:23px!important}.hm-step-image{min-height:235px!important;padding:17px!important}.hm-step-image .hm-step-copy h3{font-size:14px}.hm-step-image .hm-step-copy p{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.hm-service-strip-premium .hm-service-track{animation:none!important}.hm-step-image-bg{transition:none!important}}
+
+
+/* Services mega menu */
+.nav-services-wrap{position:relative;display:flex;align-items:center;height:100%}
+.nav-services-trigger{display:flex;align-items:center;gap:8px;height:100%;padding:0 12px;border:0;background:transparent;color:inherit;font:inherit;cursor:pointer}
+.nav-services-chevron{font-size:17px;transition:transform .22s}.nav-services-wrap.is-open .nav-services-chevron{transform:rotate(180deg)}
+.services-mega{position:fixed;z-index:1000;top:78px;left:2.5vw;width:95vw;max-height:calc(100vh - 100px);overflow:auto;display:grid;grid-template-columns:minmax(220px,.78fr) minmax(0,2.5fr);gap:25px;padding:20px;background:rgba(7,15,17,.97);border:1px solid rgba(220,245,245,.13);border-radius:17px;box-shadow:0 28px 90px rgba(0,0,0,.58);backdrop-filter:blur(28px);animation:megaIn .2s ease-out}
+@keyframes megaIn{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+.services-mega-feature{display:flex;flex-direction:column;align-items:flex-start;min-height:420px;padding:22px;border:1px solid rgba(220,245,245,.09);border-radius:13px;background:linear-gradient(155deg,rgba(34,211,238,.07),rgba(234,234,242,.018))}
+.services-feature-tag{display:flex;align-items:center;gap:7px;color:#22d3ee;font-size:9px;letter-spacing:.12em}.services-feature-icon{width:54px;height:54px;display:grid;place-items:center;margin-top:28px;border-radius:15px;color:#22d3ee;background:rgba(34,211,238,.1)}
+.services-mega-feature h3{margin:20px 0 9px;color:#f3f7f7;font-size:18px;line-height:1.8}.services-mega-feature p{margin:0;color:#9caeb0;font-size:11px;line-height:2.2}
+.services-mega-feature>a{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:auto;padding:13px;border-radius:10px;background:#eaf2f2;color:#101719;font-size:11px;font-weight:800}
+.services-mega-feature>small{margin-top:14px;color:#809496;font-size:9px}.services-mega-columns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.services-mega-group h4{display:flex;align-items:center;gap:8px;margin:4px 0 15px;color:#22d3ee;font-size:11px;line-height:1.8}
+.services-mega-group ul{list-style:none;margin:0;padding:0}.services-mega-group li+li{margin-top:5px}
+.services-mega-group li button{display:flex;align-items:center;justify-content:space-between;gap:7px;width:100%;padding:9px 7px;text-align:right;border:0;border-radius:8px;background:transparent;color:#e5eeee;cursor:pointer;transition:background .2s,color .2s}
+.services-mega-group li button:hover{background:rgba(34,211,238,.07);color:#22d3ee}.services-mega-group li button>span{display:flex;flex-direction:column;gap:4px;min-width:0;font-size:10px;font-weight:700;line-height:1.7}
+.services-mega-group li small{display:block;font-size:8px;font-weight:400;line-height:1.7;color:#84989a}.services-mega-group li button>svg{flex:0 0 auto;color:#527d80}
+.mobile-services-trigger{display:flex;justify-content:space-between;width:100%;padding:13px 0;border:0;background:transparent;color:inherit;text-align:right;font:inherit}
+.mobile-services-list{display:grid;gap:15px;padding:8px 12px 16px;border-right:1px solid rgba(34,211,238,.25)}.mobile-services-list section{display:grid;gap:6px}
+.mobile-services-list b{color:#22d3ee;font-size:11px}.mobile-services-list button{padding:6px 0;border:0;background:transparent;color:#cbd4d5;text-align:right;font-size:10px}
+@media(max-width:1100px){.services-mega{grid-template-columns:210px minmax(0,1fr);gap:14px;padding:15px}.services-mega-columns{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+@media(max-width:680px){.services-mega{display:none}}
