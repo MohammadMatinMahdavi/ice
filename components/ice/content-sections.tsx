@@ -6,18 +6,18 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const request = (service: string) => "mailto:hello@ice.studio?subject=" + encodeURIComponent("درخواست خدمات ICE: " + service) + "&body=" + encodeURIComponent("سلام، برای " + service + " مشاوره و برآورد قیمت می‌خواهم.");
 const portfolio = [
-  { image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1000&q=85", title: "تصویرسازی محصول", type: "AI PRODUCT VISUALS" },
-  { image: "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1000&q=85", title: "کمپین و تبلیغات", type: "CAMPAIGN / VIDEO" },
-  { image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=85", title: "هویت و استایل برند", type: "BRAND IDENTITY" },
-  { image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85", title: "خلاقیت در جزئیات", type: "CREATIVE DIRECTION" },
-  { image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1000&q=85", title: "تجربه دیجیتال", type: "DIGITAL EXPERIENCE" },
-  { image: "https://images.unsplash.com/photo-1634942536790-2537db6a2b9b?auto=format&fit=crop&w=1000&q=85", title: "طراحی بصری", type: "VISUAL DESIGN" },
-  { image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=85", title: "تبلیغات محصول", type: "PRODUCT CAMPAIGN" },
-  { image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1000&q=85", title: "طراحی و بسته‌بندی", type: "PACKAGING" },
-  { image: "https://images.unsplash.com/photo-1559028006-448665bd7c7f?auto=format&fit=crop&w=1000&q=85", title: "طراحی تجربه", type: "DIGITAL / UI" },
-  { image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=85", title: "محتوای خلاق", type: "CONTENT" },
-  { image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=85", title: "تولید محتوای تصویری", type: "PRODUCTION" },
-  { image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85", title: "فضای برند", type: "ART DIRECTION" },
+  { image: "/images/portfolio/01-product-visuals.jpg", title: "تصویرسازی محصول", type: "AI PRODUCT VISUALS" },
+  { image: "/images/portfolio/02-campaign-video.jpg", title: "کمپین و تبلیغات", type: "CAMPAIGN / VIDEO" },
+  { image: "/images/portfolio/03-brand-style.jpg", title: "هویت و استایل برند", type: "BRAND IDENTITY" },
+  { image: "/images/portfolio/04-creative-details.jpg", title: "خلاقیت در جزئیات", type: "CREATIVE DIRECTION" },
+  { image: "/images/portfolio/05-digital-experience.jpg", title: "تجربه دیجیتال", type: "DIGITAL EXPERIENCE" },
+  { image: "/images/portfolio/06-visual-design.jpg", title: "طراحی بصری", type: "VISUAL DESIGN" },
+  { image: "/images/portfolio/07-product-campaign.jpg", title: "تبلیغات محصول", type: "PRODUCT CAMPAIGN" },
+  { image: "/images/portfolio/08-packaging.jpg", title: "طراحی و بسته‌بندی", type: "PACKAGING" },
+  { image: "/images/portfolio/09-ui-experience.jpg", title: "طراحی تجربه", type: "DIGITAL / UI" },
+  { image: "/images/portfolio/10-creative-content.jpg", title: "محتوای خلاق", type: "CONTENT" },
+  { image: "/images/portfolio/11-photo-production.jpg", title: "تولید محتوای تصویری", type: "PRODUCTION" },
+  { image: "/images/portfolio/12-brand-space.jpg", title: "فضای برند", type: "ART DIRECTION" },
 ];
 const aiServices = [
   { icon: Package, title: "تصاویر محصول با هوش مصنوعی", desc: "تصاویر حرفه‌ای محصول با کیفیت استودیویی، بدون نیاز به عکاسی سنتی.", price: "استعلام قیمت", tag: "AI VISUALS", tone: "violet" },
@@ -51,7 +51,7 @@ const faqs = [
 const fade = { initial: { opacity: 0, y: 22 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: .12 }, transition: { duration: .55 } };
 
 export function Portfolio() {
-  return <section className="hm-section hm-portfolio" id="portfolio"><div className="container"><div className="hm-section-heading"><div><span className="eyebrow"><span className="eyebrow-mark" /> SELECTED WORK</span><h2>پروژه‌های <span className="gradient-type">منتخب.</span></h2></div><a href="#contact" className="text-link">همکاری روی پروژه بعدی <ArrowUpLeft size={15} /></a></div><div className="hm-portfolio-grid">{portfolio.map((item, i) => <motion.a href="#contact" className="hm-portfolio-item" key={item.title} {...fade} transition={{ duration: .45, delay: (i % 4) * .05 }}><img src={item.image} alt={item.title} loading="lazy" /><div className="hm-portfolio-overlay"><small>{item.type}</small><b>{item.title}</b><i><ArrowUpLeft size={17} /></i></div></motion.a>)}</div><p className="hm-portfolio-note">تصاویر این بخش نمونه‌های مفهومی‌اند و با نمونه‌کارهای واقعی ICE جایگزین می‌شوند.</p></div></section>;
+  return <section className="hm-section hm-portfolio" id="portfolio"><div className="container"><div className="hm-section-heading"><div><span className="eyebrow"><span className="eyebrow-mark" /> SELECTED WORK</span><h2>پروژه‌های <span className="gradient-type">منتخب.</span></h2></div><a href="#contact" className="text-link">همکاری روی پروژه بعدی <ArrowUpLeft size={15} /></a></div><div className="hm-portfolio-grid">{portfolio.map((item, i) => <motion.a href="#contact" className="hm-portfolio-item" key={item.title} {...fade} transition={{ duration: .45, delay: (i % 4) * .05 }}><img src={item.image} alt={item.title} loading="lazy" /><div className="hm-portfolio-overlay"><small>{item.type}</small><b>{item.title}</b><i><ArrowUpLeft size={17} /></i></div></motion.a>)}</div><p className="hm-portfolio-note">برای جایگزینی نمونه‌کارها، تصاویر پوشه public/images/portfolio را با پروژه‌های واقعی ICE جایگزین کن.</p></div></section>;
 }
 
 export function AIServiceCards() {
