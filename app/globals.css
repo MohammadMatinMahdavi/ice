@@ -368,3 +368,25 @@ body{background:#050507!important}
 @media(min-width:1024px){.hm-category-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.hm-category-image-card{min-height:360px!important}}
 @media(max-width:680px){.hm-service-group{gap:23px;padding-inline-end:23px}.hm-category-image-card{min-height:215px!important;padding:13px!important;gap:9px!important}.hm-category-image-card .hm-category-icon{width:38px!important;height:38px!important}.hm-category-image-card .hm-category-icon svg{width:19px}.hm-category-image-card .hm-category-copy b{font-size:11px!important}.hm-category-image-card .hm-category-copy small{font-size:6px!important}.hm-category-action{left:10px;bottom:11px;width:27px;height:27px}.hm-category-image-card .hm-category-index{font-size:8px}}
 @media(prefers-reduced-motion:reduce){.hm-service-strip-premium .hm-service-track{animation:none!important}.hm-category-card-image{transition:none}}
+
+
+/* Seamless ticker: two identical groups, translated by exactly one group width */
+.hm-service-strip-premium .hm-service-track{display:flex!important;width:max-content!important;gap:0!important;animation:hmStripSeamless 42s linear infinite!important}
+.hm-service-strip-premium .hm-service-group{display:flex!important;flex:0 0 auto!important;width:max-content!important;gap:37px!important;padding-inline-end:37px!important}
+@keyframes hmStripSeamless{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+.hm-service-strip-premium:hover .hm-service-track{animation-play-state:running!important}
+
+/* Process cards use full-bleed photography while retaining their existing proportions */
+.hm-step-image{isolation:isolate;overflow:hidden;min-height:270px!important;padding:24px!important;border-color:rgba(255,255,255,.15)!important;background:#101016!important}
+.hm-step-image-bg{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.82) brightness(.68);transition:transform .7s cubic-bezier(.2,.75,.2,1),filter .5s}
+.hm-step-image:after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,rgba(3,3,6,.18) 0%,rgba(3,3,6,.28) 35%,rgba(3,3,6,.91) 100%)}
+.hm-step-image:hover .hm-step-image-bg{transform:scale(1.045);filter:saturate(1) brightness(.78)}
+.hm-step-image .hm-step-number{position:relative;z-index:1;color:#fff;font-size:11px;letter-spacing:.16em;text-shadow:0 2px 12px #000}
+.hm-step-image .hm-step-copy{position:relative;z-index:1;margin-top:auto;max-width:330px}
+.hm-step-image .hm-step-copy h3{font-size:17px;color:#fff;margin:0 0 9px;text-shadow:0 2px 14px rgba(0,0,0,.55)}
+.hm-step-image .hm-step-copy p{font-size:11px;line-height:2.1;color:rgba(255,255,255,.82);text-shadow:0 1px 9px rgba(0,0,0,.8)}
+.hm-step-image>i{z-index:2;background:rgba(163,230,53,.16);border:1px solid rgba(163,230,53,.28);backdrop-filter:blur(10px)}
+.hm-category-action{border-radius:12px!important}
+@media(min-width:681px){.hm-step-image{min-height:310px!important;padding:26px!important}}
+@media(max-width:680px){.hm-service-strip-premium .hm-service-group{gap:23px!important;padding-inline-end:23px!important}.hm-step-image{min-height:235px!important;padding:17px!important}.hm-step-image .hm-step-copy h3{font-size:14px}.hm-step-image .hm-step-copy p{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.hm-service-strip-premium .hm-service-track{animation:none!important}.hm-step-image-bg{transition:none!important}}
