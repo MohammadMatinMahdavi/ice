@@ -394,8 +394,8 @@ body{background:#050507!important}
 
 /* Services mega menu */
 .nav-services-wrap{position:relative;display:flex;align-items:center;height:100%}
-.nav-services-trigger{display:flex;align-items:center;gap:8px;height:100%;padding:0 12px;border:0;background:transparent;color:inherit;font:inherit;cursor:pointer}
-.nav-services-chevron{font-size:17px;transition:transform .22s}.nav-services-wrap.is-open .nav-services-chevron{transform:rotate(180deg)}
+.nav-services-trigger{display:flex;align-items:center;gap:6px;height:100%;padding:0 12px;border:0;background:transparent;color:inherit;font:inherit;font-size:14px;font-weight:500;line-height:1.4;cursor:pointer}
+.nav-services-chevron{flex:0 0 auto;opacity:.78;transition:transform .22s,opacity .22s}.nav-services-wrap.is-open .nav-services-chevron{transform:rotate(180deg);opacity:1}
 .services-mega{position:fixed;z-index:1000;top:78px;left:2.5vw;width:95vw;max-height:calc(100vh - 100px);overflow:auto;display:grid;grid-template-columns:minmax(220px,.78fr) minmax(0,2.5fr);gap:25px;padding:20px;background:rgba(10,10,15,.97);border:1px solid rgba(139,92,246,.28);border-radius:17px;box-shadow:0 28px 90px rgba(0,0,0,.68),0 0 36px rgba(139,92,246,.08);backdrop-filter:blur(28px);animation:megaIn .2s ease-out}
 @keyframes megaIn{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
 .services-mega-feature{display:flex;flex-direction:column;align-items:flex-start;min-height:420px;padding:22px;border:1px solid rgba(220,245,245,.09);border-radius:13px;background:linear-gradient(155deg,rgba(139,92,246,.14),rgba(34,211,238,.055) 55%,rgba(234,234,242,.018))}
