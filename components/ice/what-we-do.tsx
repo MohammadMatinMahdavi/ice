@@ -1,6 +1,6 @@
 "use client";
 
-import { Aperture, ArrowUpLeft, Bot, Clapperboard, Palette } from "lucide-react";
+import { Aperture, Plus, Bot, Clapperboard, Palette, Layers3 } from "lucide-react";
 
 type Props = { onReveal: () => void; onToggle: () => void; expanded: boolean };
 
@@ -25,8 +25,8 @@ export function WhatWeDo({ onReveal, onToggle, expanded }: Props) {
       <span className="hm-category-index">0{i + 1}</span>
       <span className="hm-category-icon"><card.icon size={24} strokeWidth={1.7} /></span>
       <span className="hm-category-copy"><b>{card.title}</b><small>{card.sub}</small></span>
-      <span className="hm-category-action" aria-hidden="true"><ArrowUpLeft size={18} /></span>
+      <span className="hm-category-action" aria-hidden="true"><Plus size={18} /></span>
     </button>)}</div>
-    <div className="hm-reveal-wrap"><button className={"hm-reveal-button" + (expanded ? " is-expanded" : "")} type="button" onClick={onToggle}><span className="hm-reveal-label">{expanded ? "بستن جزئیات خدمات و نمونه‌کارها" : "مشاهده نمونه‌کارها، خدمات و قیمت‌ها"}</span><span className="hm-reveal-icon"><ArrowUpLeft size={19} /></span></button><small>{expanded ? "تمام بخش‌های پروژه و خدمات نمایش داده شده‌اند." : "نمونه‌کارها، جزئیات خدمات و راهنمای سفارش در ادامه"}</small></div>
+    <div className="hm-reveal-wrap"><button className={"hm-reveal-button" + (expanded ? " is-expanded" : "")} type="button" onClick={onToggle}><span className="hm-reveal-label">{expanded ? "بستن جزئیات خدمات و نمونه‌کارها" : "مشاهده نمونه‌کارها، خدمات و قیمت‌ها"}</span><span className="hm-reveal-icon"><Layers3 size={19} /></span></button><small>{expanded ? "تمام بخش‌های پروژه و خدمات نمایش داده شده‌اند." : "نمونه‌کارها، جزئیات خدمات و راهنمای سفارش در ادامه"}</small></div>
   </div></section>;
 }
