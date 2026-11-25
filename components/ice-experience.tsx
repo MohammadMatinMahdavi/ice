@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowDownLeft, ArrowUpLeft, MoveUpRight, Menu, X, Check, Sparkles, Package, Video, Aperture, Bot, Globe, Workflow, Palette, Clapperboard, Megaphone, ShoppingBag, MessageCircle, WandSparkles } from "lucide-react";
+import { ArrowDownLeft, ArrowUpLeft, MoveUpRight, Menu, X, Check, Sparkles, Package, Video, Aperture, Bot, Globe, Workflow, Palette, Clapperboard, Megaphone, ShoppingBag, MessageCircle } from "lucide-react";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-const wa = "https://wa.me/?text=";
-const request = (service: string) => wa + encodeURIComponent("سلام ICE، برای " + service + " مشاوره و برآورد قیمت می‌خواهم.");
+const request = (service: string) => "mailto:hello@ice.studio?subject=" + encodeURIComponent("درخواست خدمات ICE: " + service) + "&body=" + encodeURIComponent("سلام، برای " + service + " مشاوره و برآورد قیمت می‌خواهم.");
 const portfolio = [
   { image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1000&q=85", title: "تصویرسازی محصول", type: "AI PRODUCT VISUALS" },
   { image: "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1000&q=85", title: "کمپین و تبلیغات", type: "CAMPAIGN / VIDEO" },
@@ -18,7 +17,7 @@ const portfolio = [
   { image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=85", title: "تبلیغات محصول", type: "PRODUCT CAMPAIGN" },
   { image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1000&q=85", title: "طراحی و بسته‌بندی", type: "PACKAGING" },
   { image: "https://images.unsplash.com/photo-1559028006-448665bd7c7f?auto=format&fit=crop&w=1000&q=85", title: "طراحی تجربه", type: "DIGITAL / UI" },
-  { image: "https://images.unsplash.com/photo-1547658002-4b8e9b7b7b7b?auto=format&fit=crop&w=1000&q=85", title: "محتوای خلاق", type: "CONTENT" },
+  { image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=85", title: "محتوای خلاق", type: "CONTENT" },
   { image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=85", title: "تولید محتوای تصویری", type: "PRODUCTION" },
   { image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85", title: "فضای برند", type: "ART DIRECTION" },
 ];
