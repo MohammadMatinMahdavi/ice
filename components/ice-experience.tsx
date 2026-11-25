@@ -1,10 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { ArrowDownLeft, ArrowUpLeft, MoveUpRight, Menu, X, Check, Sparkles, Package, Video, Aperture, Bot, Globe, Workflow, Palette, Clapperboard, Megaphone, ShoppingBag, MessageCircle } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowUpLeft, MoveUpRight, Check, Package, Video, Aperture, Bot, Globe, Workflow, Palette, Clapperboard, Megaphone, ShoppingBag, MessageCircle } from "lucide-react";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Header } from "@/components/ice/header";
+import { Hero } from "@/components/ice/hero";
+import { ServiceStrip } from "@/components/ice/service-strip";
+import { WhatWeDo } from "@/components/ice/what-we-do";
 
 const request = (service: string) => "mailto:hello@ice.studio?subject=" + encodeURIComponent("درخواست خدمات ICE: " + service) + "&body=" + encodeURIComponent("سلام، برای " + service + " مشاوره و برآورد قیمت می‌خواهم.");
 const portfolio = [
@@ -52,41 +56,8 @@ const faqs = [
 ];
 const fade = { initial: { opacity: 0, y: 22 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: .12 }, transition: { duration: .55 } };
 
-function Header() {
-  const [open, setOpen] = useState(false);
-  const links = [["خدمات", "#services"], ["نمونه‌کارها", "#portfolio"], ["سؤالات", "#faq"], ["تماس", "#contact"]];
-  return <header className="site-header"><div className="container"><div className="nav-shell">
-    <a href="#home" className="brand-lockup"><span className="brand-symbol">✳</span><span>ICE<small>CREATIVE STUDIO</small></span></a>
-    <nav className="desktop-nav">{links.map(([label, href]) => <a key={href} href={href}>{label}</a>)}</nav>
-    <a href="#contact" className="button button-primary nav-cta">شروع پروژه <ArrowUpLeft size={16} /></a>
-    <button className="mobile-toggle" aria-label="منو" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
-  </div>{open && <nav className="mobile-nav">{links.map(([label, href]) => <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>)}<a href="#contact" onClick={() => setOpen(false)}>شروع پروژه</a></nav>}</div></header>;
-}
-
-function Hero() {
-  return <section className="hm-hero" id="home"><div className="container hm-hero-inner">
-    <motion.div className="hm-hero-copy" {...fade}><div className="eyebrow"><span className="eyebrow-mark" /> ICE · AI CREATIVE STUDIO</div><h1>هرآنچه هوش مصنوعی<br />برای <span className="gradient-type">کسب‌وکارت</span> می‌سازد.</h1><p>تصویر · ویدیو · چت‌بات · اپلیکیشن</p><div className="hm-hero-actions"><a href="#contact" className="button button-primary">شروع یک پروژه <ArrowUpLeft size={17} /></a><a href="#services" className="text-link">مشاهده خدمات <ArrowUpLeft size={15} /></a></div><div className="hm-hero-proof"><span><i /> آماده‌ی دریافت پروژه</span><span>CREATIVE × AI × TECHNOLOGY</span></div></motion.div>
-    <div className="hm-hero-visual"><div className="hm-hero-image hm-image-main"><img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1000&q=85" alt="AI product visual" /></div><div className="hm-hero-image hm-image-top"><img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=700&q=85" alt="Creative design" /></div><div className="hm-hero-image hm-image-bottom"><img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=700&q=85" alt="Campaign visual" /></div><div className="hm-hero-float"><Sparkles size={15} /><span>IDEAS → IMPACT</span></div></div>
-  </div></section>;
-}
-
-function ServiceTicker() {
-  const items = ["AI PRODUCT PHOTOS", "AI VIDEO ADS", "AI AVATARS", "CGI & 3D", "CHATBOTS", "WHATSAPP AGENTS", "WEB APPS", "AUTOMATION", "SOCIAL MEDIA", "BRANDING", "WEBSITES", "ADS"];
-  return <div className="hm-service-strip"><div className="hm-service-track">{[...items, ...items].map((item, i) => <span key={i}>{item}<b>✳</b></span>)}</div></div>;
-}
-
 function Portfolio() {
   return <section className="hm-section hm-portfolio" id="portfolio"><div className="container"><div className="hm-section-heading"><div><span className="eyebrow"><span className="eyebrow-mark" /> SELECTED WORK</span><h2>پروژه‌های <span className="gradient-type">منتخب.</span></h2></div><a href="#contact" className="text-link">همکاری روی پروژه بعدی <ArrowUpLeft size={15} /></a></div><div className="hm-portfolio-grid">{portfolio.map((item, i) => <motion.a href="#contact" className="hm-portfolio-item" key={item.title} {...fade} transition={{ duration: .45, delay: (i % 4) * .05 }}><img src={item.image} alt={item.title} loading="lazy" /><div className="hm-portfolio-overlay"><small>{item.type}</small><b>{item.title}</b><i><ArrowUpLeft size={17} /></i></div></motion.a>)}</div><p className="hm-portfolio-note">تصاویر این بخش نمونه‌های مفهومی‌اند و با نمونه‌کارهای واقعی ICE جایگزین می‌شوند.</p></div></section>;
-}
-
-function ServiceCategories() {
-  const cards = [
-    { title: "کمپین‌های تصویری", sub: "محصول · تبلیغات · AI Visuals", icon: Package, href: "#ai-services", tone: "violet" },
-    { title: "تبلیغات ویدیویی", sub: "Ads · Avatars · 3D Video", icon: Video, href: "#ai-services", tone: "pink" },
-    { title: "برند و شبکه‌های اجتماعی", sub: "Design · Content · Ads", icon: Palette, href: "#creative-services", tone: "cyan" },
-    { title: "سیستم‌های هوشمند", sub: "Chatbots · Apps · Automation", icon: Bot, href: "#ai-services", tone: "lime" },
-  ];
-  return <section className="hm-section hm-what-we-do" id="services"><div className="container"><div className="hm-section-heading"><div><span className="eyebrow"><span className="eyebrow-mark" /> WHAT WE DO</span><h2>چه چیزی <span className="gradient-type">می‌سازیم؟</span></h2></div><a href="#ai-services" className="text-link">همه خدمات و قیمت‌ها <ArrowUpLeft size={15} /></a></div><div className="hm-category-grid">{cards.map((card, i) => <a href={card.href} className={"hm-category-card tone-" + card.tone} key={card.title}><span className="hm-category-icon"><card.icon size={23} /></span><span className="hm-category-copy"><b>{card.title}</b><small>{card.sub}</small></span><ArrowUpLeft className="hm-category-arrow" size={18} /></a>)}</div></div></section>;
 }
 
 function AIServiceCards() {
@@ -118,5 +89,21 @@ function Footer() {
 }
 
 export default function IceExperience() {
-  return <><SmoothScroll /><Header /><main><Hero /><ServiceTicker /><Portfolio /><ServiceCategories /><AIServiceCards /><CreativeServices /><Process /><FAQ /><ProductPromo /><Contact /></main><Footer /></>;
+  const [showMore, setShowMore] = useState(false);
+  const revealMore = () => setShowMore(true);
+  const toggleMore = () => setShowMore(value => !value);
+  return <><SmoothScroll /><Header onReveal={revealMore} /><main>
+    <Hero />
+    <ServiceStrip />
+    <WhatWeDo onReveal={revealMore} onToggle={toggleMore} expanded={showMore} />
+    <AnimatePresence initial={false}>{showMore && <motion.div key="expanded-details" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 12 }} transition={{ duration: .4 }}>
+      <Portfolio />
+      <AIServiceCards />
+      <CreativeServices />
+      <Process />
+      <FAQ />
+      <ProductPromo />
+    </motion.div>}</AnimatePresence>
+    <Contact />
+  </main><Footer /></>;
 }
