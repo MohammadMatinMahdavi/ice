@@ -310,3 +310,36 @@ h1,h2,h3{font-weight:800;letter-spacing:-.045em}
  .hm-reveal-icon{width:35px;height:35px}
 }
 @media(prefers-reduced-motion:reduce){.hm-hero-grid,.hm-hero-glow{display:none}.hm-whatsapp-cta,.hm-category-card-premium,.hm-reveal-button{transition:none}}
+
+
+/* Latest layout refinements: integrated full-width glass header and deeper black canvas */
+:root{--bg:#050507;--panel:#0b0b10}
+html,body{background:#050507!important}
+body{background:#050507!important}
+.hm-hero-centered{background:#050507!important}
+.hm-hero-centered:before{background:radial-gradient(ellipse at 50% 36%,rgba(91,54,166,.105),transparent 39%),linear-gradient(180deg,#050507 0%,#060609 78%,#050507 100%)!important}
+.hm-hero-centered:after{opacity:.12!important}
+.hm-hero-glow-a{background:rgba(139,92,246,.12)!important}
+.hm-hero-glow-b{background:rgba(34,211,238,.045)!important}
+.hm-hero-copy-centered h1{margin-top:19px!important}
+.hm-hero-capabilities{margin-top:17px!important;margin-bottom:20px!important}
+.hm-hero-bottom{margin-top:48px!important}
+@media(min-width:681px){.hm-hero-centered{padding-top:142px!important}.hm-hero-bottom{margin-top:56px!important}}
+@media(max-width:680px){.hm-hero-centered{padding-top:112px!important}.hm-hero-capabilities{margin-top:15px!important;margin-bottom:17px!important}.hm-hero-bottom{margin-top:38px!important}}
+
+/* Header is part of the page canvas, not a floating rounded card */
+.site-header{position:fixed;top:0!important;left:0;right:0;width:100%;padding:0;pointer-events:none}
+.site-header>.container{width:100%!important;max-width:none!important;margin:0!important;padding:0!important;pointer-events:auto}
+.nav-shell{width:100%;height:78px!important;padding-inline:clamp(20px,5vw,76px)!important;border:0!important;border-bottom:1px solid rgba(234,234,242,.075)!important;border-radius:0!important;background:rgba(5,5,7,.58)!important;backdrop-filter:blur(24px) saturate(135%)!important;-webkit-backdrop-filter:blur(24px) saturate(135%)!important;box-shadow:0 8px 34px rgba(0,0,0,.12)!important}
+.mobile-nav{margin:0!important;border-radius:0 0 16px 16px!important;border-top:0!important;background:rgba(5,5,7,.94)!important;backdrop-filter:blur(24px)!important}
+@media(max-width:680px){.nav-shell{height:66px!important;padding-inline:18px!important}.site-header{top:0!important}.mobile-nav{padding:18px!important}}
+
+/* Black surfaces stay nearly-black so electric accents read with more contrast */
+.hm-service-strip-premium{background:#07070a!important}
+.hm-service-strip-premium:before{background:linear-gradient(90deg,#07070a,transparent)!important}
+.hm-service-strip-premium:after{background:linear-gradient(270deg,#07070a,transparent)!important}
+.hm-what-we-do-premium{background:linear-gradient(180deg,#050507,#08080d)!important}
+.hm-portfolio,.hm-ai-services,.hm-creative-services,.hm-process,.hm-faq,.hm-product-promo{background-color:#050507!important}
+.hm-what-we-do-premium .hm-category-card-premium{background:linear-gradient(130deg,rgba(255,255,255,.028),rgba(255,255,255,.006))!important}
+.hm-final-cta{background:#07070a!important}
+.hm-footer{background:#050507!important}
