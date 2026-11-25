@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDownLeft, ArrowUpLeft } from "lucide-react";
+import { ArrowDownLeft, MessageCircle } from "lucide-react";
 
 const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "");
 const whatsappHref = whatsappNumber
@@ -28,7 +28,7 @@ export function Hero() {
         <a className="hm-whatsapp-cta" href={whatsappHref} target="_blank" rel="noreferrer">
           <span className="hm-whatsapp-icon"><WhatsAppMark /></span>
           <span className="hm-whatsapp-copy"><small>LET’S TALK ON WHATSAPP</small><b>شروع گفت‌وگو با ICE</b></span>
-          <span className="hm-whatsapp-arrow"><ArrowUpLeft size={21} /></span>
+          <span className="hm-whatsapp-arrow"><MessageCircle size={20} /></span>
         </a>
         <span className="hm-hero-microcopy">یک پیام کوتاه کافی است؛ باقی مسیر را با هم پیدا می‌کنیم.</span>
       </motion.div>
