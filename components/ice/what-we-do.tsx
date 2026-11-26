@@ -1,13 +1,13 @@
 "use client";
 
-import { Aperture, Plus, Bot, Clapperboard, Palette, Layers3 } from "lucide-react";
+import { Plus, Bot, Clapperboard, Code2, Layers3 } from "lucide-react";
 
 type Props = { onReveal: () => void; onToggle: () => void; expanded: boolean };
 
 const cards = [
-  { title: "تصویر و کمپین محصول", sub: "PRODUCTS · CAMPAIGNS · AI VISUALS", icon: Aperture, tone: "violet", image: "/images/services/01-product-visuals.jpg", href: "#ai-services" },
-  { title: "ویدیو و محتوای متحرک", sub: "ADS · MOTION · CGI & 3D", icon: Clapperboard, tone: "pink", image: "/images/services/02-video-motion.jpg", href: "#ai-services" },
-  { title: "برند و ارتباطات", sub: "DESIGN · CONTENT · MARKETING", icon: Palette, tone: "cyan", image: "/images/services/03-brand-identity.jpg", href: "#creative-services" },
+  { title: "برنامه‌نویسی", sub: "IOS · ANDROID · BOTS", icon: Code2, tone: "violet", image: "/images/services/01-programming.jpg", href: "#creative-services" },
+  { title: "تولید محتوای هوش مصنوعی", sub: "ADS · MOTION · CGI", icon: Clapperboard, tone: "pink", image: "/images/services/02-ai-content.jpg", href: "#ai-services" },
+  { title: "طراحی و توسعه وب", sub: "SHOPPING · LANDING · REDESIGN", icon: Code2, tone: "cyan", image: "/images/services/03-web-development.jpg", href: "#creative-services" },
   { title: "راهکارهای هوشمند", sub: "CHATBOTS · APPS · AUTOMATION", icon: Bot, tone: "lime", image: "/images/services/04-smart-solutions.jpg", href: "#ai-services" },
 ];
 
