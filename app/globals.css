@@ -447,6 +447,7 @@ body{background:#050507!important}
   .services-mega { top: 78px !important; }
   .services-mega-dismiss-zone {
     position: fixed;
+    pointer-events: auto;
     z-index: 49;
     top: min(545px, calc(100vh - 18px));
     right: 0;
