@@ -427,3 +427,110 @@ body{background:#050507!important}
 
 /* Inset desktop header brand and project CTA from viewport edges */
 @media(min-width:681px){.nav-shell{padding-inline:clamp(34px,9vw,150px)!important}}
+
+
+/* Header refinement: consistent navigation type, centered edge groups and intentional mega-menu dismissal */
+.desktop-nav > a,
+.desktop-nav .nav-services-trigger {
+  font-family: inherit;
+  font-size: 12px !important;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.desktop-nav { gap: clamp(18px, 2.2vw, 32px) !important; }
+.nav-services-trigger { padding-inline: 0 !important; }
+.nav-services-chevron { width: 14px; height: 14px; font-size: initial; transition: transform .22s ease; }
+.nav-services-wrap.is-open .nav-services-chevron { transform: rotate(180deg); }
+@media (min-width: 681px) {
+  .nav-shell { padding-inline: clamp(54px, 11vw, 176px) !important; }
+  .services-mega { top: 78px !important; }
+  .services-mega-dismiss-zone {
+    position: fixed;
+    pointer-events: auto;
+    z-index: 49;
+    top: min(545px, calc(100vh - 18px));
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+  }
+  .site-header { z-index: 50; }
+  .services-mega { z-index: 51; }
+}
+.mobile-nav {
+  position: relative;
+  max-height: calc(100dvh - 84px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  gap: 0 !important;
+  padding: 10px 18px 16px !important;
+  border: 1px solid rgba(139,92,246,.22) !important;
+  box-shadow: 0 22px 60px rgba(0,0,0,.48);
+}
+.mobile-nav > a:not(.mobile-project-cta),
+.mobile-services-trigger {
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 11px 2px;
+  border-bottom: 1px solid rgba(234,234,242,.07);
+  color: #e6e3ef;
+  font-size: 13px !important;
+  font-weight: 600;
+  text-align: right;
+}
+.mobile-services-trigger { background: transparent; }
+.mobile-services-trigger svg { color: var(--cyan); transition: transform .2s ease; }
+.mobile-services-trigger svg.is-open { transform: rotate(180deg); }
+.mobile-services-list {
+  display: grid;
+  gap: 17px;
+  padding: 14px 12px 17px;
+  border-right: 1px solid rgba(34,211,238,.28);
+  background: rgba(255,255,255,.018);
+}
+.mobile-services-list section { display: grid; gap: 3px; }
+.mobile-services-list b {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+  color: var(--cyan);
+  font-size: 11px;
+}
+.mobile-services-list button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  min-height: 36px;
+  padding: 7px 2px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #c9c5d5;
+  text-align: right;
+  font-size: 11px;
+}
+.mobile-services-list button:active { color: var(--cyan); background: rgba(139,92,246,.1); }
+.mobile-project-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 46px;
+  margin-top: 14px;
+  border-radius: 10px;
+  background: var(--violet);
+  color: white !important;
+  font-size: 12px;
+  font-weight: 800;
+}
+@media (max-width: 680px) {
+  .nav-shell { padding-inline: 20px !important; }
+  .mobile-nav { margin-top: 0 !important; border-radius: 0 0 16px 16px !important; }
+}

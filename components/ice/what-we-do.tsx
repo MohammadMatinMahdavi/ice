@@ -5,7 +5,7 @@ import { Aperture, Plus, Bot, Clapperboard, Palette, Layers3 } from "lucide-reac
 type Props = { onReveal: () => void; onToggle: () => void; expanded: boolean };
 
 const cards = [
-  { title: "برنامه نویسی", sub: "ANDROID · BOTS", icon: Aperture, tone: "violet", image: "/images/services/01-product-visuals.jpg", href: "#ai-services" },
+  { title: "برنامه نویسی", sub: "ANDROID  ·  IOS  · BOTS", icon: Aperture, tone: "violet", image: "/images/services/01-product-visuals.jpg", href: "#ai-services" },
   { title: "تولید محتوای هوش مصنوعی", sub: "ADS · MOTION · CGI & 3D", icon: Clapperboard, tone: "pink", image: "/images/services/02-video-motion.jpg", href: "#ai-services" },
   { title: "طراحی و توسعه وب", sub: "SHOPPING · LANDING · REDESIGN", icon: Palette, tone: "cyan", image: "/images/services/03-brand-identity.jpg", href: "#creative-services" },
   { title: "راهکارهای هوشمند", sub: "CHATBOTS · APPS · AUTOMATION", icon: Bot, tone: "lime", image: "/images/services/04-smart-solutions.jpg", href: "#ai-services" },
